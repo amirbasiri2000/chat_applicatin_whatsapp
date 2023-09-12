@@ -11,7 +11,7 @@
   --gray-text-color: #dbdbdbf3;
 
   /* ________________fonts */
-  --username-chat-font: 12px;
+  --username-chat-font: 9px;
   --main-font: 16px;
 
   /* _________________icons */
@@ -106,13 +106,19 @@ i:hover {
   box-sizing: border-box;
 }
 
+.setn__message__content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .sent__message {
   background-color: var(--primary-color);
   width: fit-content;
   max-width: 40%;
   display: inline-block;
   padding: 5px 10px;
-  padding-left: 20px;
   border-radius: 8px;
 }
 
@@ -126,6 +132,8 @@ i:hover {
 .sent__message-msg {
   color: var(--white-text-color);
   padding: 5px 0;
+  font-size: var(--main-font);
+  overflow-wrap: break-word;  
 }
 
 .sent__message-date {
@@ -134,6 +142,43 @@ i:hover {
   justify-content: flex-end;
   font-size: var(--username-chat-font);
 }
+
+/*  */
+.received__message__content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.receive__message {
+  background-color: #eee;
+  width: fit-content;
+  max-width: 40%;
+  display: inline-block;
+  padding: 5px 10px;
+  padding-left: 20px;
+  border-radius: 8px;
+}
+
+.receive__message-user {
+  color: var(--primary-color);
+  font-size: var(--username-chat-font);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.receive__message-msg {
+  color: var(--primary-color);
+  padding: 5px 0;
+}
+
+.receive__message-date {
+  color: var(--primary-color);
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--username-chat-font);
+}
+/*  */
 
 .chat__typing-input {
   display: flex;
@@ -319,6 +364,9 @@ i:hover {
     width: 97vw;
     height: 96vh;
   }
+  .sent__message{
+    max-width: 70%;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -342,6 +390,9 @@ i:hover {
   }
 
   .sent__message {
+    max-width: 100%;
+  }
+  .sent__message{
     max-width: 100%;
   }
 }
